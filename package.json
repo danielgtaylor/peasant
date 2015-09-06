@@ -8,6 +8,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/danielgtaylor/peasant"
+  },
+  "keywords": [
+    "ES6",
+    "Module",
+    "Build",
+    "Lint",
+    "Test",
+    "Coverage"
+  ],
   "author": "Daniel G. Taylor",
   "license": "MIT",
   "dependencies": {
