@@ -1,6 +1,6 @@
 {
   "name": "peasant",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Opinionated ES6 module build tool helper",
   "bin": {
     "peasant": "bin/peasant.js"
@@ -33,6 +33,7 @@
     "isparta": "^3.0.4",
     "mkdirp": "^0.5.1",
     "mocha": "^2.3.0",
+    "mocha-better-spec-reporter": "^2.1.1",
     "yargs": "^3.23.0"
   }
 }
