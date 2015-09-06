@@ -3,6 +3,15 @@ An opinionated build helper for ES6 modules built for Node.js. It includes the a
 
 Built on popular, well-tested components like ESLint and Mocha.
 
+Opinionated bits:
+
+* All source must go in the `src` folder.
+* All tests must go in the `test` folder.
+* You must use either `.js` or `.es6` as an extension.
+* Tests must be written for Mocha, but can use any assertion library.
+* Tests *should* `import`/`require` the files from `src`.
+* You package main should point to the transpiled files in `lib`.
+
 ## Quick Start
 Peasant includes a command to quickly start using it in your project. You can install it globally to use this:
 
@@ -16,12 +25,26 @@ Assuming you want to start a new project, you would do something like this:
 mkdir my-project
 cd my-project
 npm init
+mkdir src
+mkdir test
 peasant init
 ```
 
-For existing projects, you can omit all but the last step! Note, this may overwrite customized data in your `package.json`.
+For existing projects, you can omit all but the last step! Note, this may overwrite customized data in your `package.json`, so be careful. It's best to use version control and see a diff of the changes before you commit to them.
 
-## Usage
+You now have several commands available:
+
+```sh
+# Run tests
+npm test
+
+# Generate coverage reports
+npm run cover
+```
+
+When publishing the package, an additional build step will generate the `lib` directory with the transpiled sources.
+
+## Manual Usage
 
 ```sh
 npm install peasant
@@ -63,6 +86,13 @@ Use the `test` subcommand to run all your tests using [Mocha](). Uses the Babel 
 
 ```sh
 peasant test
+```
+
+#### Cover
+Generate coverage reports from your tests. This will create a new directory called `coverage` and it will contain an LCOV report as well as HTML in `coverage/lcov-report/index.html`.
+
+```sh
+peasant cover
 ```
 
 ## Customization

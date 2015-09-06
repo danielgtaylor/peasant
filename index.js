@@ -47,9 +47,9 @@ function init(done) {
     }
     pkg.scripts.cover = 'peasant cover'
     pkg.scripts.test = 'peasant test lint'
-    pkg.scripts.prepublish = 'peasant build'
+    pkg.scripts.prepublish = 'peasant -s build'
 
-    fs.writeFile(pkgPath, JSON.stringify(pkg), 'utf8', done);
+    fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2) + '\n', 'utf8', done);
   });
 }
 
