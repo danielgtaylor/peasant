@@ -42,7 +42,7 @@ each(args._, function (item, done) {
       peasant.lint(done);
       break;
     case 'build':
-      peasant.build(args.sourcemaps, done);
+      peasant.build(args, done);
       break;
     case 'test':
       var options = {};

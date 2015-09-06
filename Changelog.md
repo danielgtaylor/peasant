@@ -1,3 +1,9 @@
+# 0.2.0
+
+- Change default `package.json` scripts setup for `peasant init` subcommand.
+- Install `babel-runtime` during `peasant init`.
+- Fix source map parameter bug.
+
 # 0.1.2
 
 - Add forgotten dependency.

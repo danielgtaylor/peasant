@@ -32,7 +32,7 @@ function init(done) {
   var pkgPath = path.join(process.cwd(), 'package.json');
 
   log('Installing peasant...');
-  exec('npm install --save-dev peasant', {shell: true}, function(err, stdout, stderr) {
+  exec('npm install --save-dev peasant && npm install --save babel-runtime', function(err, stdout, stderr) {
     if (stdout) console.log(stdout);
     if (stderr) console.error(stderr);
     if (err) {
@@ -46,8 +46,9 @@ function init(done) {
       pkg.scripts = {};
     }
     pkg.scripts.cover = 'peasant cover'
-    pkg.scripts.test = 'peasant test lint'
-    pkg.scripts.prepublish = 'peasant -s build'
+    pkg.scripts.peasant = 'peasant'
+    pkg.scripts.prepublish = 'peasant -s lint test build'
+    pkg.scripts.test = 'peasant test'
 
     fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2) + '\n', 'utf8', done);
   });

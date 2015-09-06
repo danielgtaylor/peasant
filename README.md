@@ -1,7 +1,7 @@
 # Peasant
 An opinionated build helper for ES6 modules built for Node.js. It includes the ability to lint, transpile, test, and generate coverage reports for your module and is ideal for use in npm scripts to keep your module simple. Let the brave peasant do the heavy lifting.
 
-Built on popular, well-tested components like ESLint and Mocha.
+Built on popular, well-tested components like [Babel](https://babeljs.io/), [ESLint](http://eslint.org/), and [Mocha](https://mochajs.org/).
 
 Opinionated bits:
 
@@ -22,15 +22,19 @@ npm install -g peasant
 Assuming you want to start a new project, you would do something like this:
 
 ```sh
-mkdir my-project
-cd my-project
+mkdir my-new-project
+cd my-new-project
 npm init
-mkdir src
-mkdir test
+mkdir src test
 peasant init
 ```
 
 For existing projects, you can omit all but the last step! Note, this may overwrite customized data in your `package.json`, so be careful. It's best to use version control and see a diff of the changes before you commit to them.
+
+```sh
+cd my-existing-project
+peasant init
+```
 
 You now have several commands available:
 
@@ -38,13 +42,20 @@ You now have several commands available:
 # Run tests
 npm test
 
+# Run tests filtered by regular expression
+npm test -- -g MY_REGEX
+
 # Generate coverage reports
 npm run cover
+
+# Run arbitrary subcommands
+npm run peasant -- lint build ...
 ```
 
 When publishing the package, an additional build step will generate the `lib` directory with the transpiled sources.
 
 ## Manual Usage
+Instead of using the `peasant init` command above, you can also manually install and use Peasant.
 
 ```sh
 npm install peasant
@@ -64,14 +75,14 @@ Then, in your `package.json`:
 The following subcommands are currently available, and can be combined however you want. They will be run in the order given, e.g. `peasant test lint`.
 
 #### Lint
-Use the `lint` subcommand to lint all your source code, using `babel-eslint` to parse ES6 code. Uses the [Airbnb Javascript Style Guide]().
+Use the `lint` subcommand to lint all your source code, using `babel-eslint` to parse ES6 code. Uses the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
 
 ```sh
 peasant lint
 ```
 
 #### Build
-Use the `build` subcommand to transpile your source code using `babel`. This uses the optional [Babel runtime]() component.
+Use the `build` subcommand to transpile your source code using `babel`. This uses the optional [Babel runtime](https://babeljs.io/docs/usage/runtime/) component.
 
 ```sh
 # Default build
@@ -97,3 +108,8 @@ peasant cover
 
 ## Customization
 Nope. Just kidding! Propose something in a new issue!
+
+## License
+Copyright &copy; 2015 Daniel G. Taylor
+
+http://dgt.mit-license.org/
