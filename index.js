@@ -18,8 +18,8 @@ function log(message) {
  */
 function newer(source, dest) {
   try {
-    sTime = fs.statSync(source).mtime;
-    dTime = fs.statSync(dest).mtime;
+    var sTime = fs.statSync(source).mtime;
+    var dTime = fs.statSync(dest).mtime;
 
     return sTime > dTime;
   } catch (err) {

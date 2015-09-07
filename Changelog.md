@@ -1,3 +1,7 @@
+# 0.3.1 - 2015-09-07
+
+- Fix broken incremental builds.
+
 # 0.3.0 - 2015-09-07
 
 - Change the behavior of the linter to use an `.eslintrc` configuration file to work better with text editors and allow rule customization. This means that `eslint-config-airbnb` is installed alongside `peasant` instead of as a dependency.
