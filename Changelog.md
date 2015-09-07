@@ -1,18 +1,24 @@
-# 0.2.0
+# 0.3.0 - 2015-09-07
+
+- Change the behavior of the linter to use an `.eslintrc` configuration file to work better with text editors and allow rule customization. This means that `eslint-config-airbnb` is installed alongside `peasant` instead of as a dependency.
+- The `init` command now creates a new `npm run lint` script.
+- Documentation updates and small fixes.
+
+# 0.2.0 - 2015-09-06
 
 - Change default `package.json` scripts setup for `peasant init` subcommand.
 - Install `babel-runtime` during `peasant init`.
 - Fix source map parameter bug.
 
-# 0.1.2
+# 0.1.2 - 2015-09-06
 
 - Add forgotten dependency.
 
-# 0.1.1
+# 0.1.1 - 2015-09-06
 
 - Build with source maps by default when using `peasant init`.
 - Updated documentation.
 
-# 0.1.0
+# 0.1.0 - 2015-09-05
 
 - Initial release.

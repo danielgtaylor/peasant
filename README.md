@@ -10,7 +10,8 @@ Opinionated bits:
 * You must use either `.js` or `.es6` as an extension.
 * Tests must be written for Mocha, but can use any assertion library.
 * Tests *should* `import`/`require` the files from `src`.
-* You package main should point to the transpiled files in `lib`.
+* All code *should* use the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
+* You package main must point to the transpiled files in `lib`.
 
 ## Quick Start
 Peasant includes a command to quickly start using it in your project. You can install it globally to use this:
@@ -39,6 +40,9 @@ peasant init
 You now have several commands available:
 
 ```sh
+# Lint code
+npm run lint
+
 # Run tests
 npm test
 
@@ -75,7 +79,7 @@ Then, in your `package.json`:
 The following subcommands are currently available, and can be combined however you want. They will be run in the order given, e.g. `peasant test lint`.
 
 #### Lint
-Use the `lint` subcommand to lint all your source code, using `babel-eslint` to parse ES6 code. Uses the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
+Use the `lint` subcommand to lint all your source code, using `babel-eslint` to parse ES6 code. Uses the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript), but you can provide your own rule overrides in `.eslintrc`.
 
 ```sh
 peasant lint
