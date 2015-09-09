@@ -1,3 +1,7 @@
+# 0.4.0 - 2015-09-09
+
+- Require `eslint` to be installed as a dev dependency of new packages so that linting works as expected in most text editors.
+
 # 0.3.1 - 2015-09-07
 
 - Fix broken incremental builds.

@@ -58,11 +58,13 @@ npm run peasant -- lint build ...
 
 When publishing the package, an additional build step will generate the `lib` directory with the transpiled sources.
 
+**Note**, due to the way that text editors provide linting on a per-project basis, Peasant will add both `eslint` and `eslint-config-airbnb` to your development dependencies rather than including them as a dependency of Peasant. This lets text editors find the packages and allows for live linting as you type or when you save. See the [linter-eslint](https://atom.io/packages/linter-eslint) package for Atom or the [SublimeLinter-eslint](https://github.com/roadhump/SublimeLinter-eslint) package for Sublime Text for more info.
+
 ## Manual Usage
 Instead of using the `peasant init` command above, you can also manually install and use Peasant.
 
 ```sh
-npm install peasant
+npm install --save-dev peasant eslint eslint-config-airbnb
 ```
 
 Then, in your `package.json`:

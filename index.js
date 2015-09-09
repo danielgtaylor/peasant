@@ -35,8 +35,8 @@ function init(done) {
   var path = require('path');
   var pkgPath = path.join(process.cwd(), 'package.json');
 
-  log('Installing peasant...');
-  exec('npm install --save-dev peasant eslint-config-airbnb && npm install --save babel-runtime', function(err, stdout, stderr) {
+  log('Installing dependencies...');
+  exec('npm install --save-dev peasant eslint eslint-config-airbnb && npm install --save babel-runtime', function(err, stdout, stderr) {
     if (stdout) console.log(stdout);
     if (stderr) console.error(stderr);
     if (err) {

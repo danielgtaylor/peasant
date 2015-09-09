@@ -1,6 +1,6 @@
 {
   "name": "peasant",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Opinionated ES6 module build tool helper",
   "bin": {
     "peasant": "bin/peasant.js"
