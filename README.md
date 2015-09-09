@@ -58,13 +58,11 @@ npm run peasant -- lint build ...
 
 When publishing the package, an additional build step will generate the `lib` directory with the transpiled sources.
 
-**Note**, due to the way that text editors provide linting on a per-project basis, Peasant will add both `eslint` and `eslint-config-airbnb` to your development dependencies rather than including them as a dependency of Peasant. This lets text editors find the packages and allows for live linting as you type or when you save. See the [linter-eslint](https://atom.io/packages/linter-eslint) package for Atom or the [SublimeLinter-eslint](https://github.com/roadhump/SublimeLinter-eslint) package for Sublime Text for more info.
-
 ## Manual Usage
 Instead of using the `peasant init` command above, you can also manually install and use Peasant.
 
 ```sh
-npm install --save-dev peasant eslint eslint-config-airbnb
+npm install --save-dev peasant
 ```
 
 Then, in your `package.json`:
@@ -77,8 +75,31 @@ Then, in your `package.json`:
 }
 ```
 
+Don't forget to run `peasant link` if you want to use linting plugins with your text editor that require a local version of ESLint. These links are also automatically created anytime you run `peasant lint`.
+
 ### Available Subcommands
 The following subcommands are currently available, and can be combined however you want. They will be run in the order given, e.g. `peasant test lint`.
+
+#### Init
+Bootstrap a project to use Peasant. See the quick start above for an example of how and when to use this command.
+
+```sh
+peasant init
+```
+
+#### Link
+Manually create symbolic links to enable linting. These links are required if you want to use your text editor for live linting, and are created for you when running the `peasant lint` subcommand described below or when using `peasant init` or running `npm install` in a development checkout. You should not need this subcommand unless setting Peasant up manually.
+
+Creates the following links:
+
+* `./node_modules/.bin/eslint`
+* `./node_modules/eslint`
+* `./node_modules/eslint-config-airbnb`
+* `./node_modules/babel-eslint`
+
+```sh
+peasant link
+```
 
 #### Lint
 Use the `lint` subcommand to lint all your source code, using `babel-eslint` to parse ES6 code. Uses the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript), but you can provide your own rule overrides in `.eslintrc`.

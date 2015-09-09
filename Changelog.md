@@ -1,3 +1,8 @@
+# 0.5.0 - 2015-09-09
+
+- Use a new strategy for handling linting and remove the requirement that consumers of Peasant need any other package installed other than Peasant itself. This adds a new `link` command that is run on dev install, ci, etc and enables text editor linting to work painlessly.
+- Update the default npm scripts based on user feedback.
+
 # 0.4.0 - 2015-09-09
 
 - Require `eslint` to be installed as a dev dependency of new packages so that linting works as expected in most text editors.

@@ -22,6 +22,7 @@ var args = require('yargs')
     return require('../package').version;
   })
   .command('init', 'Initialize a repository')
+  .command('link', 'Create symlinks text editor for linting')
   .command('lint', 'Source code error & style check')
   .command('build', 'Transpile sources for release')
   .command('test', 'Run tests')
@@ -37,6 +38,9 @@ each(args._, function (item, done) {
   switch(item) {
     case 'init':
       peasant.init(done);
+      break;
+    case 'link':
+      peasant.link(done);
       break;
     case 'lint':
       peasant.lint(done);
@@ -63,4 +67,6 @@ each(args._, function (item, done) {
   if (err && err instanceof Error) {
     console.error(err.stack);
   }
+
+  process.exit(err ? 1 : 0);
 });
