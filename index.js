@@ -119,7 +119,9 @@ function lint(done) {
 
     var eslint = require('eslint');
 
-    var linter = new eslint.CLIEngine();
+    var linter = new eslint.CLIEngine({
+      cache: true
+    });
     var results = linter.executeOnFiles(glob.sync('{bin,src,test}/**/*.{js,es6}'));
 
     var output = linter.getFormatter('stylish')(results.results)

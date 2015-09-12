@@ -1,3 +1,7 @@
+# 0.5.1 - 2015-09-12
+
+- Speed up linting by using the new ESLint `cache` option.
+
 # 0.5.0 - 2015-09-09
 
 - Use a new strategy for handling linting and remove the requirement that consumers of Peasant need any other package installed other than Peasant itself. This adds a new `link` command that is run on dev install, ci, etc and enables text editor linting to work painlessly.
