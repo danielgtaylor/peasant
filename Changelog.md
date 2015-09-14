@@ -1,3 +1,7 @@
+# 0.5.2 - 2015-09-14
+
+- Update to mocha-better-spec-reporter 2.1.2 to get better text diff output on test failures.
+
 # 0.5.1 - 2015-09-12
 
 - Speed up linting by using the new ESLint `cache` option.
