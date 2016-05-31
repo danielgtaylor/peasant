@@ -49,12 +49,14 @@ function init(done) {
     if (pkg.scripts === undefined) {
       pkg.scripts = {};
     }
-    pkg.scripts.cover = 'peasant cover'
+
     pkg.scripts.lint = 'peasant lint'
+    pkg.scripts.test = 'peasant test'
+    pkg.scripts.build = 'peasant build'
+    pkg.scripts.cover = 'peasant cover'
     pkg.scripts.peasant = 'peasant'
     pkg.scripts.ci = 'peasant -s lint test build'
     pkg.scripts.prepublish = 'npm run ci'
-    pkg.scripts.test = 'peasant test'
 
     fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2) + '\n', 'utf8', function (err) {
       if (err) {
