@@ -1,3 +1,12 @@
+# 1.1.0 - 2017-31-03
+
+- Use babel-preset-env instead of babel-preset-latest
+
+# 1.0.0 - 2017-29-03
+
+- Update babel ecosystem to v6.x.x
+- Update eslint ecosystem to v3.x.x
+
 # 0.5.2 - 2015-09-14
 
 - Update to mocha-better-spec-reporter 2.1.2 to get better text diff output on test failures.

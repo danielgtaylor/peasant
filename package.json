@@ -1,6 +1,6 @@
 {
   "name": "peasant",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Opinionated ES6 module build tool helper",
   "bin": {
     "peasant": "bin/peasant.js"
@@ -27,7 +27,7 @@
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.0",
+    "babel-preset-env": "^1.2.2",
     "chalk": "^1.1.1",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
