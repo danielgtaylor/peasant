@@ -25,6 +25,7 @@ var args = require('yargs')
   .command('link', 'Create symlinks text editor for linting')
   .command('lint', 'Source code error & style check')
   .command('build', 'Transpile sources for release')
+  .command('web', 'Transpile sources for web release')
   .command('test', 'Run tests')
   .command('cover', 'Generate test coverage reports')
   .example('$0 -s lint build', 'Lint and transpile sources with source maps')
@@ -47,6 +48,9 @@ each(args._, function (item, done) {
       break;
     case 'build':
       peasant.build(args, done);
+      break;
+    case 'web':
+      peasant.web(args, done);
       break;
     case 'test':
       var options = {};

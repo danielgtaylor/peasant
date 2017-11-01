@@ -1,6 +1,6 @@
 {
   "name": "peasant",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Opinionated ES6 module build tool helper",
   "bin": {
     "peasant": "bin/peasant.js"
@@ -25,20 +25,23 @@
   "dependencies": {
     "async-each-series": "^1.0.0",
     "babel-core": "^6.24.0",
-    "babel-eslint": "^7.2.1",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.2.2",
     "chalk": "^1.1.1",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb": "^14.1.0",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "glob": "7.x.x",
     "isparta": "4.x.x",
     "mkdirp": "0.x.x",
     "mocha": "^3.2.0",
     "mocha-better-spec-reporter": "^3.1.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.8.1",
     "yargs": "7.x.x"
   }
 }
