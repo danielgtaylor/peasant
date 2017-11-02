@@ -53,11 +53,11 @@ function init(done) {
     pkg.scripts.lint = 'peasant lint'
     pkg.scripts.test = 'peasant test'
     pkg.scripts.build = 'peasant build'
-    pkg.scripts.web = 'peasant web'
+    pkg.scripts.web = 'peasant -w build'
     pkg.scripts.cover = 'peasant cover'
     pkg.scripts.peasant = 'peasant'
     pkg.scripts.ci = 'peasant -s lint test'
-    pkg.scripts.prepublish = 'peasant -s lint test build web'
+    pkg.scripts.prepublish = 'peasant -s -w lint test build'
 
     fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2) + '\n', 'utf8', function (err) {
       if (err) {
@@ -156,6 +156,10 @@ function lint(done) {
 function build(options, done) {
   log('Building...');
 
+  if (options.web) {
+    return web(options, done);
+  }
+
   var babel = require('babel-core');
   var mkdirp = require('mkdirp').sync;
   var path = require('path');
@@ -196,8 +200,6 @@ function build(options, done) {
  * Generate transpiled sources for web deployment.
  */
 function web(options, done) {
-  log('Building...');
-
   var mkdirp = require('mkdirp').sync;
   var webpack = require('webpack');
   var Uglify = require('uglifyjs-webpack-plugin');
@@ -345,7 +347,6 @@ module.exports = {
   link: link,
   lint: lint,
   build: build,
-  web: web,
   test: test,
   cover: cover
 }
