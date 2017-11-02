@@ -16,6 +16,11 @@ var args = require('yargs')
     description: 'Generate sourcemaps',
     boolean: true
   })
+  .options('w', {
+    alias: 'web',
+    description: 'Build for web release',
+    boolean: true
+  })
   .help('h')
   .alias('h', 'help')
   .version(function () {
