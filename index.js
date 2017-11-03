@@ -52,12 +52,12 @@ function init(done) {
 
     pkg.scripts.lint = 'peasant lint'
     pkg.scripts.test = 'peasant test'
-    pkg.scripts.build = 'peasant build'
+    pkg.scripts.build = 'peasant -s build'
     pkg.scripts.web = 'peasant -w build'
     pkg.scripts.cover = 'peasant cover'
     pkg.scripts.peasant = 'peasant'
     pkg.scripts.ci = 'peasant -s lint test'
-    pkg.scripts.prepublish = 'peasant -s -w lint test build'
+    pkg.scripts.prepublish = 'npm run ci && npm run build && npm run web'
 
     fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2) + '\n', 'utf8', function (err) {
       if (err) {
@@ -208,11 +208,11 @@ function web(options, done) {
   mkdirp(path.resolve('./lib'));
 
   webpack({
-    entry: path.resolve(library.src),
+    entry: path.resolve(library.module),
     devtool: 'source-map',
     output: {
       path: path.resolve('./lib'),
-      filename: library.name + '.js',
+      filename: library.name + '.min.js',
       library: library.name,
       libraryTarget: 'umd',
       umdNamedDefine: true
