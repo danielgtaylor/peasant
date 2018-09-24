@@ -57,7 +57,7 @@ function init(done) {
     pkg.scripts.cover = 'peasant cover'
     pkg.scripts.peasant = 'peasant'
     pkg.scripts.ci = 'peasant -s lint test'
-    pkg.scripts.prepublish = 'npm run ci && npm run build && npm run web'
+    pkg.scripts.prepublishOnly = 'npm run ci && npm run build && npm run web'
 
     fs.writeFile(pkgPath, JSON.stringify(pkg, null, 2) + '\n', 'utf8', function (err) {
       if (err) {
